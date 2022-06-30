@@ -1,0 +1,29 @@
+CREATE TABLE sports_store (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, popularity INTEGER, price INTEGER);
+
+INSERT INTO sports_store VALUES (1, "soccer balls",8,74,29.99);
+INSERT INTO sports_store VALUES (2, "football",20,90,49.99);
+INSERT INTO sports_store VALUES (3,"baseballs",50,80,19.99);
+INSERT INTO sports_store VALUES (4, "softball pants",5,33,37.50);
+INSERT INTO sports_store VALUES (5, "hockey sticks",2,23,32.99);
+INSERT INTO sports_store VALUES (6, "soccer cleats",10,80,54.99);
+INSERT INTO sports_store VALUES (7, "swim cap",4,18,23.99);
+INSERT INTO sports_store VALUES (8, "football helmet",15,82,62.99);
+INSERT INTO sports_store VALUES (9, "fishing rods",3,39,49.99);
+INSERT INTO sports_store VALUES (10, "baseball mitt", 11,70,99.99);
+INSERT INTO sports_store VALUES (11,"basketball", 17,59,37.99);
+INSERT INTO sports_store VALUES (12, "basketball net",2,24,250);
+INSERT INTO sports_store VALUES (13, "adult golf club",5,61,44.99);
+INSERT INTO sports_store VALUES (14, "lacrosse goal",1,12,69.99);
+INSERT INTO sports_store VALUES (15, "lacrosse stick",4,19,29.99);
+
+-what is the average price of items with a popularity score greater than 40?
+SELECT avg(price) FROM sports_store
+WHERE popularity > 40; 
+
+-display items along with corresponding price ordered by price.
+SELECT item,price FROM sports_store
+ORDER BY price DESC; 
+
+-display items that have the word 'basketball'.
+SELECT item FROM sports_store
+WHERE item LIKE 'basketball%';
