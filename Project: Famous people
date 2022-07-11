@@ -1,0 +1,30 @@
+/* Create table about the people and what they do here */
+
+Create Table singers (id integer primary key, name TEXT, song TEXT, age NUMERIC, collaborations TEXT);
+INSERT into singers VALUES (1,"Lady Gaga", "Poker Face", 36, "Telephone ft. Beyonce");
+INSERT into singers VALUES (2, "Ariana Grande", "Needy", 29, "The Way ft. Mac Miller");
+INSERT into singers VALUES (3, "Remi Wolf", "Disco Man", 26, "Pool ft. Still Woozy");
+INSERT into singers VALUES (4, "Bad Bunny", "Callaita", 28, "La Santa ft. Daddy Yankee");
+INSERT into singers VALUES (5, "Rihanna", "Te Amo", 34, "Umbrella ft. Jay-Z");
+
+Create Table movie_stars (id integer primary key, name TEXT, movie TEXT, total_movies NUMERIC, total_movie_awards NUMERIC);
+INSERT into movie_stars VALUES (1, "Jessica Alba", "Good Luck Chuck", 40, 15);
+INSERT into movie_stars VALUES (2, "Reese Witherspoon", "Legally Blonde", 45, 28);
+INSERT into movie_stars VALUES (3, "Lady Gaga", "A Star Is Born", 5, 2);
+INSERT into movie_stars VALUES (4, "Drew Barrymore", "50 First Dates", 57, 32);
+INSERT into movie_stars VALUES (5, "Al Pacino", "Scarface", 65, 12);
+
+Create Table celebrity_brands (id integer primary key, brand_name TEXT, celebrity TEXT, net_worth NUMERIC); 
+INSERT into celebrity_brands VALUES (1, "r.e.m beauty", "Ariana Grande", 150000000);
+INSERT into celebrity_brands VALUES (2, "The Honest Compnany", "Jessica Alba", 550000000);
+INSERT into celebrity_brands VALUES (3, "Beats By Dre", "Dr. Dre", 1400000000);
+INSERT into celebrity_brands VALUES (4, "Kylie Cosmetics", "Kylie Jenner", 900000000);
+INSERT into celebrity_brands VALUES (5, "Haus Labs","Lady Gaga", 141700000);
+INSERT into celebrity_brands VALUES (6, "Flower Beauty", "Drew Barrymore", 50000000);
+
+SELECT * FROM singers INNER JOIN movie_stars ON singers.name=movie_stars.name;
+SELECT singers.name, song, age,movie, total_movies FROM singers INNER JOIN movie_stars ON singers.name=movie_stars.name;
+
+SELECT * FROM movie_stars INNER JOIN celebrity_brands ON movie_stars.name=celebrity_brands.celebrity; 
+
+SELECT * FROM movie_stars LEFT JOIN celebrity_brands ON movie_stars.name=celebrity_brands.celebrity; 
