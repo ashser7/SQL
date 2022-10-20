@@ -17,13 +17,16 @@ INSERT INTO sports_store VALUES (14, "lacrosse goal",1,12,69.99);
 INSERT INTO sports_store VALUES (15, "lacrosse stick",4,19,29.99);
 
 -what is the average price of items with a popularity score greater than 40?
-SELECT avg(price) FROM sports_store
+SELECT avg(price) 
+FROM sports_store
 WHERE popularity > 40; 
 
 -display items along with corresponding price ordered by price.
-SELECT item,price FROM sports_store
+SELECT item,price 
+FROM sports_store
 ORDER BY price DESC; 
 
 -display items that have the word 'basketball'.
-SELECT item FROM sports_store
+SELECT item 
+FROM sports_store
 WHERE item LIKE 'basketball%';
