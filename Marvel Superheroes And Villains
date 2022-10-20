@@ -41,15 +41,27 @@ INSERT INTO marvels VALUES(25, "Juggernaut", 76, "Neutral", "Male", 2.87, 862, "
 INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA", 5, 2, 2, 2, 5, 3);
 
 
-Select * from marvels where intelligence > 2 and weight_kg = 174.63;
+Select * 
+FROM marvels 
+WHERE intelligence > 2 AND weight_kg = 174.63;
 
 
-Select avg(speed) FROM marvels;
-SELECT name, max(height_m) FROM marvels WHERE strength > 3;
-SELECT name, min(fighting_skills) FROM marvels GROUP BY gender;
+Select avg(speed) 
+FROM marvels;
+
+SELECT name, max(height_m) 
+FROM marvels 
+WHERE strength > 3;
+
+SELECT name, min(fighting_skills) 
+FROM marvels 
+GROUP BY gender;
 
 
-SELECT name, alignment FROM marvels GROUP BY popularity HAVING durability > 5; 
+SELECT name, alignment 
+FROM marvels 
+GROUP BY popularity 
+HAVING durability > 5; 
 
 
 SELECT name, intelligence,
@@ -58,5 +70,7 @@ SELECT name, intelligence,
     END as "genius"
 FROM marvels;
 
-SELECT name FROM marvels WHERE (alignment = 'Good' OR gender = 'Female') AND (weight_kg > 52); 
+SELECT name 
+FROM marvels 
+WHERE (alignment = 'Good' OR gender = 'Female') AND (weight_kg > 52); 
 
