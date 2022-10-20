@@ -1,3 +1,5 @@
+*\ Created a sports store dataset *\
+
 CREATE TABLE sports_store (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, popularity INTEGER, price INTEGER);
 
 INSERT INTO sports_store VALUES (1, "soccer balls",8,74,29.99);
