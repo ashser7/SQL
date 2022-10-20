@@ -1,3 +1,5 @@
+*\ Created a table and inserted marvel superheroes and villains data *\
+
 CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
     name TEXT,
     popularity INTEGER,
