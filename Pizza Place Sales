@@ -1,0 +1,39 @@
+This data was obtained from maven analytics 
+In this SQL, I'm querying data from a pizza place for a single year. 
+
+1. Are there any pizzas we should take off the menu? Any bestsellers? 
+SELECT pizza_id, sum(quantity) as total_quantity
+FROM order_details
+GROUP BY pizza_id
+ORDER BY total_quantity;
+
+2. What date has the most pizzas sold?
+SELECT date,sum(quantity) AS total_quantity
+FROM order_details
+INNER JOIN orders 
+ON order_details.order_id = orders.order_id
+GROUP BY DATE
+ORDER BY total_quantity DESC;
+
+3. How many pizzas are typically in an order?
+SELECT avg(quantity) as avg_quantity
+FROM order_details;
+
+4. How many customers do we have each day?
+SELECT COUNT(order_id), date
+FROM orders
+GROUP BY date;
+
+5. Are there any peak hours?
+SELECT COUNT(order_id) AS orders, STRFTIME('%H',time) AS hour
+FROM orders
+GROUP BY hour
+ORDER BY COUNT(order_id) DESC;
+
+6. How much money did we make this year?
+SELECT strftime('%Y', date) AS year, ROUND(sum(price * quantity),2) AS total
+FROM order_details
+INNER JOIN pizzas
+ON order_details.pizza_id = pizzas.pizza_id
+INNER JOIN orders
+ON orders.order_id = order_details.order_id
